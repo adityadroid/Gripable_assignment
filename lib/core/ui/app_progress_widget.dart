@@ -6,7 +6,7 @@ class AppProgressWidget extends StatelessWidget {
   const AppProgressWidget({super.key});
 
   @override
-  Widget build(BuildContext context) =>  Center(
-        child: Lottie.asset(Assets.animations.loadingAnimation,width: 100),
+  Widget build(BuildContext context) => Center(
+        child: Lottie.asset(Assets.animations.loadingAnimation, width: 100),
       );
 }

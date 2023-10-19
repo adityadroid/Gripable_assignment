@@ -4,5 +4,6 @@
     "feedHomeNew": "New",
     "feedHomeRising": "Rising",
     "feedHomeTitle": "/r/{subRedditName}",
-    "globalErrorMessage": "Something went wrong!"
+    "globalErrorMessage": "Something went wrong!",
+    "noDataMessage": "'Nothing to see here!'"
 }

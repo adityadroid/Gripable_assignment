@@ -46,7 +46,6 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     Emitter<FeedState> emit,
   ) async {
     try {
-       await Future.delayed(Duration(seconds: 5));
       final postsData = await _feedRepository.fetchPosts(
         _subRedditName,
         _sortType,
@@ -77,7 +76,6 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
         _sortType,
         after: after,
       );
-
       final previousPostsData = (state as LoadedState).feedData.children;
       final updatedData = FeedData(
         children: previousPostsData + newPostsData.children,

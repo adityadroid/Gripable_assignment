@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gripable_assignment/core/providers/subreddit_info_provider.dart';
 import 'package:gripable_assignment/core/types/sort_type.dart';
-import 'package:gripable_assignment/core/types/subreddit_info.dart';
 import 'package:gripable_assignment/core/ui/app_bottom_loader.dart';
+import 'package:gripable_assignment/core/ui/app_empty_data_widget.dart';
 import 'package:gripable_assignment/core/ui/app_error_widget.dart';
 import 'package:gripable_assignment/core/ui/app_progress_widget.dart';
 import 'package:gripable_assignment/feed/data/data.dart';
@@ -65,20 +66,25 @@ class _FeedListViewState extends State<FeedListView>
       },
       builder: (context, state) => state.when(
         loading: () => const AppProgressWidget(),
-        loaded: (FeedData feedData, bool hasReachedMax) => ListView.builder(
-          controller: _feedController.scrollController,
-          itemBuilder: (context, position) {
-            return position >= feedData.children.length
-                ? const AppBottomLoader()
-                : PostCard(
-                    key: ObjectKey(feedData),
-                    postData: feedData.children[position].data,
-                  );
-          },
-          itemCount: hasReachedMax
-              ? feedData.children.length
-              : feedData.children.length + 1,
-        ),
+        loaded: (FeedData feedData, bool hasReachedMax) {
+          if (feedData.children.isEmpty) {
+            return const AppEmptyDataWidget();
+          }
+          return ListView.builder(
+            controller: _feedController.scrollController,
+            itemBuilder: (context, position) {
+              return position >= feedData.children.length
+                  ? const AppBottomLoader()
+                  : PostCard(
+                      key: ObjectKey(feedData),
+                      postData: feedData.children[position].data,
+                    );
+            },
+            itemCount: hasReachedMax
+                ? feedData.children.length
+                : feedData.children.length + 1,
+          );
+        },
         error: () => const AppErrorWidget(),
       ),
     );
