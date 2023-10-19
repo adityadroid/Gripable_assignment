@@ -19,7 +19,6 @@ class RemoteFeedDataSource implements BaseFeedDataSource {
     String? after,
   }) async {
     final path = 'r/$subredditName/${sortType.key}.json';
-    print(path);
     final response = await dio.get<Map<String, dynamic>>(
       path,
       queryParameters: {
@@ -27,7 +26,6 @@ class RemoteFeedDataSource implements BaseFeedDataSource {
       },
     );
     final data = response.data!['data'] as Map<String, dynamic>;
-    print(data);
     return FeedData.fromJson(data);
   }
 }

@@ -7,6 +7,7 @@ import 'package:gripable_assignment/core/ui/app_progress_widget.dart';
 import 'package:gripable_assignment/feed/data/data.dart';
 import 'package:gripable_assignment/feed/domain/repository/feed_repository.dart';
 import 'package:gripable_assignment/feed/presentation/blocs/feed/feed_bloc.dart';
+import 'package:gripable_assignment/feed/presentation/widgets/post_card.dart';
 
 class FeedWidget extends StatelessWidget {
   const FeedWidget({required this.sortType, super.key});
@@ -36,8 +37,12 @@ class FeedListView extends StatelessWidget {
       builder: (context, state) => state.when(
         loading: () => const AppProgressWidget(),
         loaded: (FeedData feedData) =>
-            ListView.builder(itemBuilder: (context, position) {
-          return Text(feedData.children[position].data.title);
+            ListView.separated(
+            separatorBuilder: (context,position){
+              return SizedBox(height: 0,);
+            }
+            ,itemBuilder: (context, position) {
+          return PostCard(postData: feedData.children[position].data);
         },itemCount: feedData.children.length,),
         error: () => const AppErrorWidget(),
       ),
