@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gripable_assignment/app/ui/colors.dart';
+import 'package:gripable_assignment/core/ui/ui.dart';
 import 'package:gripable_assignment/core/utils/context_extensions.dart';
 import 'package:gripable_assignment/feed/data/data.dart';
 import 'package:url_launcher/url_launcher_string.dart';

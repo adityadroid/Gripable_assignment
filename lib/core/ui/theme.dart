@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gripable_assignment/app/ui/colors.dart';
+import 'package:gripable_assignment/core/ui/ui.dart';
 
 final _baseTheme = ThemeData(
   useMaterial3: true,
