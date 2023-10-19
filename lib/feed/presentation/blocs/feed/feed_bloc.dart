@@ -61,7 +61,7 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
           ),
         );
       }
-    } on (Exception e,) {
+    } on Exception {
       emit(const ErrorState());
     }
   }
@@ -96,7 +96,7 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
           ),
         );
       }
-    } on (Exception e,) {
+    } on Exception {
       emit(const ErrorState());
     }
   }

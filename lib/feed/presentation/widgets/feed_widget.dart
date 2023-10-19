@@ -37,8 +37,12 @@ class FeedListView extends StatefulWidget {
   State<FeedListView> createState() => _FeedListViewState();
 }
 
-class _FeedListViewState extends State<FeedListView> {
+class _FeedListViewState extends State<FeedListView>
+    with AutomaticKeepAliveClientMixin {
   late FeedController _feedController;
+
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   void initState() {
@@ -65,7 +69,9 @@ class _FeedListViewState extends State<FeedListView> {
           itemBuilder: (context, position) {
             return position >= feedData.children.length
                 ? const AppBottomLoader()
-                : PostCard(postData: feedData.children[position].data);
+                : PostCard(
+                key: ObjectKey(feedData),
+                postData: feedData.children[position].data);
           },
           itemCount: hasReachedMax
               ? feedData.children.length
