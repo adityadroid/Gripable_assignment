@@ -16,48 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$FeedEvent {
-  SortType get sortType => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(SortType sortType) loadFirstPage,
-    required TResult Function(SortType sortType) loadNextPage,
+    required TResult Function() loadFirstPage,
+    required TResult Function() loadNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(SortType sortType)? loadFirstPage,
-    TResult? Function(SortType sortType)? loadNextPage,
+    TResult? Function()? loadFirstPage,
+    TResult? Function()? loadNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SortType sortType)? loadFirstPage,
-    TResult Function(SortType sortType)? loadNextPage,
+    TResult Function()? loadFirstPage,
+    TResult Function()? loadNextPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadFirstPage value) loadFirstPage,
-    required TResult Function(LoadNextPage value) loadNextPage,
+    required TResult Function(LoadFirstPageEvent value) loadFirstPage,
+    required TResult Function(LoadNextPageEvent value) loadNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadFirstPage value)? loadFirstPage,
-    TResult? Function(LoadNextPage value)? loadNextPage,
+    TResult? Function(LoadFirstPageEvent value)? loadFirstPage,
+    TResult? Function(LoadNextPageEvent value)? loadNextPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadFirstPage value)? loadFirstPage,
-    TResult Function(LoadNextPage value)? loadNextPage,
+    TResult Function(LoadFirstPageEvent value)? loadFirstPage,
+    TResult Function(LoadNextPageEvent value)? loadNextPage,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $FeedEventCopyWith<FeedEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -65,8 +60,6 @@ mixin _$FeedEvent {
 abstract class $FeedEventCopyWith<$Res> {
   factory $FeedEventCopyWith(FeedEvent value, $Res Function(FeedEvent) then) =
       _$FeedEventCopyWithImpl<$Res, FeedEvent>;
-  @useResult
-  $Res call({SortType sortType});
 }
 
 /// @nodoc
@@ -78,112 +71,70 @@ class _$FeedEventCopyWithImpl<$Res, $Val extends FeedEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? sortType = null,
-  }) {
-    return _then(_value.copyWith(
-      sortType: null == sortType
-          ? _value.sortType
-          : sortType // ignore: cast_nullable_to_non_nullable
-              as SortType,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$LoadFirstPageImplCopyWith<$Res>
-    implements $FeedEventCopyWith<$Res> {
-  factory _$$LoadFirstPageImplCopyWith(
-          _$LoadFirstPageImpl value, $Res Function(_$LoadFirstPageImpl) then) =
-      __$$LoadFirstPageImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({SortType sortType});
+abstract class _$$LoadFirstPageEventImplCopyWith<$Res> {
+  factory _$$LoadFirstPageEventImplCopyWith(_$LoadFirstPageEventImpl value,
+          $Res Function(_$LoadFirstPageEventImpl) then) =
+      __$$LoadFirstPageEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadFirstPageImplCopyWithImpl<$Res>
-    extends _$FeedEventCopyWithImpl<$Res, _$LoadFirstPageImpl>
-    implements _$$LoadFirstPageImplCopyWith<$Res> {
-  __$$LoadFirstPageImplCopyWithImpl(
-      _$LoadFirstPageImpl _value, $Res Function(_$LoadFirstPageImpl) _then)
+class __$$LoadFirstPageEventImplCopyWithImpl<$Res>
+    extends _$FeedEventCopyWithImpl<$Res, _$LoadFirstPageEventImpl>
+    implements _$$LoadFirstPageEventImplCopyWith<$Res> {
+  __$$LoadFirstPageEventImplCopyWithImpl(_$LoadFirstPageEventImpl _value,
+      $Res Function(_$LoadFirstPageEventImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? sortType = null,
-  }) {
-    return _then(_$LoadFirstPageImpl(
-      null == sortType
-          ? _value.sortType
-          : sortType // ignore: cast_nullable_to_non_nullable
-              as SortType,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$LoadFirstPageImpl implements LoadFirstPage {
-  const _$LoadFirstPageImpl(this.sortType);
-
-  @override
-  final SortType sortType;
+class _$LoadFirstPageEventImpl implements LoadFirstPageEvent {
+  const _$LoadFirstPageEventImpl();
 
   @override
   String toString() {
-    return 'FeedEvent.loadFirstPage(sortType: $sortType)';
+    return 'FeedEvent.loadFirstPage()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoadFirstPageImpl &&
-            (identical(other.sortType, sortType) ||
-                other.sortType == sortType));
+        (other.runtimeType == runtimeType && other is _$LoadFirstPageEventImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, sortType);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LoadFirstPageImplCopyWith<_$LoadFirstPageImpl> get copyWith =>
-      __$$LoadFirstPageImplCopyWithImpl<_$LoadFirstPageImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(SortType sortType) loadFirstPage,
-    required TResult Function(SortType sortType) loadNextPage,
+    required TResult Function() loadFirstPage,
+    required TResult Function() loadNextPage,
   }) {
-    return loadFirstPage(sortType);
+    return loadFirstPage();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(SortType sortType)? loadFirstPage,
-    TResult? Function(SortType sortType)? loadNextPage,
+    TResult? Function()? loadFirstPage,
+    TResult? Function()? loadNextPage,
   }) {
-    return loadFirstPage?.call(sortType);
+    return loadFirstPage?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SortType sortType)? loadFirstPage,
-    TResult Function(SortType sortType)? loadNextPage,
+    TResult Function()? loadFirstPage,
+    TResult Function()? loadNextPage,
     required TResult orElse(),
   }) {
     if (loadFirstPage != null) {
-      return loadFirstPage(sortType);
+      return loadFirstPage();
     }
     return orElse();
   }
@@ -191,8 +142,8 @@ class _$LoadFirstPageImpl implements LoadFirstPage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadFirstPage value) loadFirstPage,
-    required TResult Function(LoadNextPage value) loadNextPage,
+    required TResult Function(LoadFirstPageEvent value) loadFirstPage,
+    required TResult Function(LoadNextPageEvent value) loadNextPage,
   }) {
     return loadFirstPage(this);
   }
@@ -200,8 +151,8 @@ class _$LoadFirstPageImpl implements LoadFirstPage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadFirstPage value)? loadFirstPage,
-    TResult? Function(LoadNextPage value)? loadNextPage,
+    TResult? Function(LoadFirstPageEvent value)? loadFirstPage,
+    TResult? Function(LoadNextPageEvent value)? loadNextPage,
   }) {
     return loadFirstPage?.call(this);
   }
@@ -209,8 +160,8 @@ class _$LoadFirstPageImpl implements LoadFirstPage {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadFirstPage value)? loadFirstPage,
-    TResult Function(LoadNextPage value)? loadNextPage,
+    TResult Function(LoadFirstPageEvent value)? loadFirstPage,
+    TResult Function(LoadNextPageEvent value)? loadNextPage,
     required TResult orElse(),
   }) {
     if (loadFirstPage != null) {
@@ -220,108 +171,72 @@ class _$LoadFirstPageImpl implements LoadFirstPage {
   }
 }
 
-abstract class LoadFirstPage implements FeedEvent {
-  const factory LoadFirstPage(final SortType sortType) = _$LoadFirstPageImpl;
-
-  @override
-  SortType get sortType;
-  @override
-  @JsonKey(ignore: true)
-  _$$LoadFirstPageImplCopyWith<_$LoadFirstPageImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class LoadFirstPageEvent implements FeedEvent {
+  const factory LoadFirstPageEvent() = _$LoadFirstPageEventImpl;
 }
 
 /// @nodoc
-abstract class _$$LoadNextPageImplCopyWith<$Res>
-    implements $FeedEventCopyWith<$Res> {
-  factory _$$LoadNextPageImplCopyWith(
-          _$LoadNextPageImpl value, $Res Function(_$LoadNextPageImpl) then) =
-      __$$LoadNextPageImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({SortType sortType});
+abstract class _$$LoadNextPageEventImplCopyWith<$Res> {
+  factory _$$LoadNextPageEventImplCopyWith(_$LoadNextPageEventImpl value,
+          $Res Function(_$LoadNextPageEventImpl) then) =
+      __$$LoadNextPageEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadNextPageImplCopyWithImpl<$Res>
-    extends _$FeedEventCopyWithImpl<$Res, _$LoadNextPageImpl>
-    implements _$$LoadNextPageImplCopyWith<$Res> {
-  __$$LoadNextPageImplCopyWithImpl(
-      _$LoadNextPageImpl _value, $Res Function(_$LoadNextPageImpl) _then)
+class __$$LoadNextPageEventImplCopyWithImpl<$Res>
+    extends _$FeedEventCopyWithImpl<$Res, _$LoadNextPageEventImpl>
+    implements _$$LoadNextPageEventImplCopyWith<$Res> {
+  __$$LoadNextPageEventImplCopyWithImpl(_$LoadNextPageEventImpl _value,
+      $Res Function(_$LoadNextPageEventImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? sortType = null,
-  }) {
-    return _then(_$LoadNextPageImpl(
-      null == sortType
-          ? _value.sortType
-          : sortType // ignore: cast_nullable_to_non_nullable
-              as SortType,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$LoadNextPageImpl implements LoadNextPage {
-  const _$LoadNextPageImpl(this.sortType);
-
-  @override
-  final SortType sortType;
+class _$LoadNextPageEventImpl implements LoadNextPageEvent {
+  const _$LoadNextPageEventImpl();
 
   @override
   String toString() {
-    return 'FeedEvent.loadNextPage(sortType: $sortType)';
+    return 'FeedEvent.loadNextPage()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoadNextPageImpl &&
-            (identical(other.sortType, sortType) ||
-                other.sortType == sortType));
+        (other.runtimeType == runtimeType && other is _$LoadNextPageEventImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, sortType);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LoadNextPageImplCopyWith<_$LoadNextPageImpl> get copyWith =>
-      __$$LoadNextPageImplCopyWithImpl<_$LoadNextPageImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(SortType sortType) loadFirstPage,
-    required TResult Function(SortType sortType) loadNextPage,
+    required TResult Function() loadFirstPage,
+    required TResult Function() loadNextPage,
   }) {
-    return loadNextPage(sortType);
+    return loadNextPage();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(SortType sortType)? loadFirstPage,
-    TResult? Function(SortType sortType)? loadNextPage,
+    TResult? Function()? loadFirstPage,
+    TResult? Function()? loadNextPage,
   }) {
-    return loadNextPage?.call(sortType);
+    return loadNextPage?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(SortType sortType)? loadFirstPage,
-    TResult Function(SortType sortType)? loadNextPage,
+    TResult Function()? loadFirstPage,
+    TResult Function()? loadNextPage,
     required TResult orElse(),
   }) {
     if (loadNextPage != null) {
-      return loadNextPage(sortType);
+      return loadNextPage();
     }
     return orElse();
   }
@@ -329,8 +244,8 @@ class _$LoadNextPageImpl implements LoadNextPage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(LoadFirstPage value) loadFirstPage,
-    required TResult Function(LoadNextPage value) loadNextPage,
+    required TResult Function(LoadFirstPageEvent value) loadFirstPage,
+    required TResult Function(LoadNextPageEvent value) loadNextPage,
   }) {
     return loadNextPage(this);
   }
@@ -338,8 +253,8 @@ class _$LoadNextPageImpl implements LoadNextPage {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadFirstPage value)? loadFirstPage,
-    TResult? Function(LoadNextPage value)? loadNextPage,
+    TResult? Function(LoadFirstPageEvent value)? loadFirstPage,
+    TResult? Function(LoadNextPageEvent value)? loadNextPage,
   }) {
     return loadNextPage?.call(this);
   }
@@ -347,8 +262,8 @@ class _$LoadNextPageImpl implements LoadNextPage {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadFirstPage value)? loadFirstPage,
-    TResult Function(LoadNextPage value)? loadNextPage,
+    TResult Function(LoadFirstPageEvent value)? loadFirstPage,
+    TResult Function(LoadNextPageEvent value)? loadNextPage,
     required TResult orElse(),
   }) {
     if (loadNextPage != null) {
@@ -358,15 +273,8 @@ class _$LoadNextPageImpl implements LoadNextPage {
   }
 }
 
-abstract class LoadNextPage implements FeedEvent {
-  const factory LoadNextPage(final SortType sortType) = _$LoadNextPageImpl;
-
-  @override
-  SortType get sortType;
-  @override
-  @JsonKey(ignore: true)
-  _$$LoadNextPageImplCopyWith<_$LoadNextPageImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class LoadNextPageEvent implements FeedEvent {
+  const factory LoadNextPageEvent() = _$LoadNextPageEventImpl;
 }
 
 /// @nodoc
@@ -374,21 +282,21 @@ mixin _$FeedState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(FeedData feedData) loaded,
+    required TResult Function(FeedData feedData, bool hasReachedMax) loaded,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(FeedData feedData)? loaded,
+    TResult? Function(FeedData feedData, bool hasReachedMax)? loaded,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(FeedData feedData)? loaded,
+    TResult Function(FeedData feedData, bool hasReachedMax)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -473,7 +381,7 @@ class _$LoadingStateImpl implements LoadingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(FeedData feedData) loaded,
+    required TResult Function(FeedData feedData, bool hasReachedMax) loaded,
     required TResult Function() error,
   }) {
     return loading();
@@ -483,7 +391,7 @@ class _$LoadingStateImpl implements LoadingState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(FeedData feedData)? loaded,
+    TResult? Function(FeedData feedData, bool hasReachedMax)? loaded,
     TResult? Function()? error,
   }) {
     return loading?.call();
@@ -493,7 +401,7 @@ class _$LoadingStateImpl implements LoadingState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(FeedData feedData)? loaded,
+    TResult Function(FeedData feedData, bool hasReachedMax)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -548,7 +456,7 @@ abstract class _$$LoadedStateImplCopyWith<$Res> {
           _$LoadedStateImpl value, $Res Function(_$LoadedStateImpl) then) =
       __$$LoadedStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({FeedData feedData});
+  $Res call({FeedData feedData, bool hasReachedMax});
 
   $FeedDataCopyWith<$Res> get feedData;
 }
@@ -565,12 +473,17 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? feedData = null,
+    Object? hasReachedMax = null,
   }) {
     return _then(_$LoadedStateImpl(
-      null == feedData
+      feedData: null == feedData
           ? _value.feedData
           : feedData // ignore: cast_nullable_to_non_nullable
               as FeedData,
+      hasReachedMax: null == hasReachedMax
+          ? _value.hasReachedMax
+          : hasReachedMax // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -586,14 +499,17 @@ class __$$LoadedStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedStateImpl implements LoadedState {
-  const _$LoadedStateImpl(this.feedData);
+  const _$LoadedStateImpl(
+      {required this.feedData, required this.hasReachedMax});
 
   @override
   final FeedData feedData;
+  @override
+  final bool hasReachedMax;
 
   @override
   String toString() {
-    return 'FeedState.loaded(feedData: $feedData)';
+    return 'FeedState.loaded(feedData: $feedData, hasReachedMax: $hasReachedMax)';
   }
 
   @override
@@ -602,11 +518,13 @@ class _$LoadedStateImpl implements LoadedState {
         (other.runtimeType == runtimeType &&
             other is _$LoadedStateImpl &&
             (identical(other.feedData, feedData) ||
-                other.feedData == feedData));
+                other.feedData == feedData) &&
+            (identical(other.hasReachedMax, hasReachedMax) ||
+                other.hasReachedMax == hasReachedMax));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, feedData);
+  int get hashCode => Object.hash(runtimeType, feedData, hasReachedMax);
 
   @JsonKey(ignore: true)
   @override
@@ -618,32 +536,32 @@ class _$LoadedStateImpl implements LoadedState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(FeedData feedData) loaded,
+    required TResult Function(FeedData feedData, bool hasReachedMax) loaded,
     required TResult Function() error,
   }) {
-    return loaded(feedData);
+    return loaded(feedData, hasReachedMax);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(FeedData feedData)? loaded,
+    TResult? Function(FeedData feedData, bool hasReachedMax)? loaded,
     TResult? Function()? error,
   }) {
-    return loaded?.call(feedData);
+    return loaded?.call(feedData, hasReachedMax);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(FeedData feedData)? loaded,
+    TResult Function(FeedData feedData, bool hasReachedMax)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(feedData);
+      return loaded(feedData, hasReachedMax);
     }
     return orElse();
   }
@@ -684,9 +602,12 @@ class _$LoadedStateImpl implements LoadedState {
 }
 
 abstract class LoadedState implements FeedState {
-  const factory LoadedState(final FeedData feedData) = _$LoadedStateImpl;
+  const factory LoadedState(
+      {required final FeedData feedData,
+      required final bool hasReachedMax}) = _$LoadedStateImpl;
 
   FeedData get feedData;
+  bool get hasReachedMax;
   @JsonKey(ignore: true)
   _$$LoadedStateImplCopyWith<_$LoadedStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -731,7 +652,7 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(FeedData feedData) loaded,
+    required TResult Function(FeedData feedData, bool hasReachedMax) loaded,
     required TResult Function() error,
   }) {
     return error();
@@ -741,7 +662,7 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(FeedData feedData)? loaded,
+    TResult? Function(FeedData feedData, bool hasReachedMax)? loaded,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -751,7 +672,7 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(FeedData feedData)? loaded,
+    TResult Function(FeedData feedData, bool hasReachedMax)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {

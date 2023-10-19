@@ -16,7 +16,6 @@ class PostCard extends StatelessWidget {
         elevation: 2,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
-          //set border radius more than 50% of height and width to make circle
         ),
         surfaceTintColor: Colors.white,
         color: Colors.white,
@@ -58,7 +57,7 @@ class PostCard extends StatelessWidget {
                     Container(),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

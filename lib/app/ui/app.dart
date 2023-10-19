@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gripable_assignment/app/ui/theme.dart';
 import 'package:gripable_assignment/core/l10n/l10n.dart';
-import 'package:gripable_assignment/core/utils/constants.dart';
 import 'package:gripable_assignment/feed/presentation/presentation.dart';
 
 class App extends StatelessWidget {
