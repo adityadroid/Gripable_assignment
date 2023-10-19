@@ -45,7 +45,6 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     LoadFirstPageEvent event,
     Emitter<FeedState> emit,
   ) async {
-    print('taking load data');
     try {
       final postsData = await _feedRepository.fetchPosts(
         _subRedditName,
