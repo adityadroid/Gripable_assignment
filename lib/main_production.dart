@@ -9,7 +9,10 @@ Future<void> main() async {
 
   /// This is where you initialize the flavor
   await dotenv.load(fileName: Assets.config.production);
-  FlavorConfig.fromMap(dotenv.env);
+  FlavorConfig.fromMap(
+    dotenv.env,
+    AppEnvironment.production,
+  );
   await bootstrap(
     App.new,
   );
