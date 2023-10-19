@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gripable_assignment/core/types/sort_type.dart';
 import 'package:gripable_assignment/core/types/subreddit_info.dart';
+import 'package:gripable_assignment/core/ui/app_error_widget.dart';
+import 'package:gripable_assignment/core/ui/app_progress_widget.dart';
+import 'package:gripable_assignment/feed/data/data.dart';
 import 'package:gripable_assignment/feed/domain/repository/feed_repository.dart';
 import 'package:gripable_assignment/feed/presentation/blocs/feed/feed_bloc.dart';
 
@@ -30,9 +33,14 @@ class FeedListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<FeedBloc, FeedState>(
       bloc: context.read<FeedBloc>(),
-      builder: (context, state) {
-        return Container();
-      },
+      builder: (context, state) => state.when(
+        loading: () => const AppProgressWidget(),
+        loaded: (FeedData feedData) =>
+            ListView.builder(itemBuilder: (context, position) {
+          return Text(feedData.children[position].data.title);
+        },itemCount: feedData.children.length,),
+        error: () => const AppErrorWidget(),
+      ),
     );
   }
 }

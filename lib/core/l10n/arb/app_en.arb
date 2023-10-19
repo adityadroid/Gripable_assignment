@@ -3,5 +3,6 @@
     "feedHomeHot": "Hot",
     "feedHomeNew": "New",
     "feedHomeRising": "Rising",
-    "feedHomeTitle": "/r/{subRedditName}"
+    "feedHomeTitle": "/r/{subRedditName}",
+    "globalErrorMessage": "Something went wrong!"
 }

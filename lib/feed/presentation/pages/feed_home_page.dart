@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gripable_assignment/core/l10n/l10n.dart';
+import 'package:gripable_assignment/core/types/sort_type.dart';
 import 'package:gripable_assignment/core/types/subreddit_info.dart';
+import 'package:gripable_assignment/feed/presentation/widgets/feed_widget.dart';
 
 class FeedHomePage extends StatelessWidget {
   const FeedHomePage({
@@ -36,11 +38,9 @@ class FeedHomeView extends StatelessWidget {
             ),
           ),
           body: TabBarView(
-            children: <Widget>[
-              Container(),
-              Container(),
-              Container(),
-            ],
+            children: SortType.values
+                .map((sortType) => FeedWidget(sortType: sortType))
+                .toList(),
           ),
         ),
       );

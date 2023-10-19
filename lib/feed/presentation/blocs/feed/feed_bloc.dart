@@ -38,18 +38,19 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     LoadFirstPage event,
     Emitter<FeedState> emit,
   ) async {
+    print('Load first page');
     try {
       final feedData = await _feedRepository.fetchPosts(
         _subRedditName,
         event.sortType,
       );
       if (feedData == null) {
-        emit(const FeedState.error());
+        emit(const ErrorState());
       } else {
-        emit(FeedState.loaded(feedData));
+        emit(LoadedState(feedData));
       }
     } on (Exception e,) {
-      emit(const FeedState.error());
+      emit(const ErrorState());
     }
   }
 

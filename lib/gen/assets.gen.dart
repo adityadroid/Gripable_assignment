@@ -25,10 +25,21 @@ class $AssetsConfigGen {
   List<String> get values => [development, production, staging];
 }
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/error.png
+  AssetGenImage get error => const AssetGenImage('assets/images/error.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [error];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsConfigGen config = $AssetsConfigGen();
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {
