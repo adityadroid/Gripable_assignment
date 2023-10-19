@@ -13,5 +13,4 @@ class FeedData with _$FeedData {
 
   factory FeedData.fromJson(Map<String, dynamic> json) =>
       _$FeedDataFromJson(json);
-
 }

@@ -55,6 +55,7 @@ class _FeedListViewState extends State<FeedListView>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return BlocConsumer<FeedBloc, FeedState>(
       bloc: context.read<FeedBloc>(),
       listener: (context, state) {
@@ -70,8 +71,9 @@ class _FeedListViewState extends State<FeedListView>
             return position >= feedData.children.length
                 ? const AppBottomLoader()
                 : PostCard(
-                key: ObjectKey(feedData),
-                postData: feedData.children[position].data);
+                    key: ObjectKey(feedData),
+                    postData: feedData.children[position].data,
+                  );
           },
           itemCount: hasReachedMax
               ? feedData.children.length

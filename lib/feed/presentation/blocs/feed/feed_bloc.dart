@@ -46,20 +46,17 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
     Emitter<FeedState> emit,
   ) async {
     try {
+       await Future.delayed(Duration(seconds: 5));
       final postsData = await _feedRepository.fetchPosts(
         _subRedditName,
         _sortType,
       );
-      if (postsData == null) {
-        emit(const ErrorState());
-      } else {
-        emit(
-          LoadedState(
-            feedData: postsData,
-            hasReachedMax: _hasReachedMax(postsData),
-          ),
-        );
-      }
+      emit(
+        LoadedState(
+          feedData: postsData,
+          hasReachedMax: _hasReachedMax(postsData),
+        ),
+      );
     } on Exception {
       emit(const ErrorState());
     }
@@ -80,21 +77,18 @@ class FeedBloc extends Bloc<FeedEvent, FeedState> {
         _sortType,
         after: after,
       );
-      if (newPostsData == null) {
-        emit(const ErrorState());
-      } else {
-        final previousPostsData = (state as LoadedState).feedData.children;
-        final updatedData = FeedData(
-          children: previousPostsData + newPostsData.children,
-          after: newPostsData.after,
-        );
-        emit(
-          LoadedState(
-            feedData: updatedData,
-            hasReachedMax: _hasReachedMax(updatedData),
-          ),
-        );
-      }
+
+      final previousPostsData = (state as LoadedState).feedData.children;
+      final updatedData = FeedData(
+        children: previousPostsData + newPostsData.children,
+        after: newPostsData.after,
+      );
+      emit(
+        LoadedState(
+          feedData: updatedData,
+          hasReachedMax: _hasReachedMax(updatedData),
+        ),
+      );
     } on Exception {
       emit(const ErrorState());
     }

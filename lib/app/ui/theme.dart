@@ -16,14 +16,14 @@ final _baseTheme = ThemeData(
       fontWeight: FontWeight.w700,
     ),
   ),
-  tabBarTheme:  TabBarTheme(
+  tabBarTheme: TabBarTheme(
     labelColor: ThemeColors.selectedTabLabelColor,
     unselectedLabelColor: ThemeColors.unSelectedTabLabelColor,
     indicatorSize: TabBarIndicatorSize.tab,
     indicator: const BoxDecoration(
       border: Border(
         bottom: BorderSide(
-          color: ThemeColors.tabIndicatorColor,
+          color: ThemeColors.highlightAccentColor,
           width: 2,
         ),
       ),
@@ -38,7 +38,7 @@ final _baseTheme = ThemeData(
     ),
   ),
   colorScheme: ColorScheme.fromSwatch(
-    accentColor:ThemeColors.swatchAccentColor,
+    accentColor: ThemeColors.swatchAccentColor,
   ),
 );
 final appTheme = _baseTheme.copyWith(

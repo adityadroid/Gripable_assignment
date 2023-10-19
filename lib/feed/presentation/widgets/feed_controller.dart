@@ -24,5 +24,5 @@ class FeedController {
     ..removeListener(_onScroll)
     ..dispose();
 
-  void removeListener()=> _scrollController..removeListener(_onScroll);
+  void removeListener() => _scrollController..removeListener(_onScroll);
 }

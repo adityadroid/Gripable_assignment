@@ -20,6 +20,7 @@ dependencies:
   google_fonts: ^6.1.0
   intl: ^0.18.1
   json_annotation: ^4.8.1
+  lottie: ^2.6.0
   provider: ^6.0.5
   url_launcher: ^6.1.14
 
@@ -39,4 +40,4 @@ flutter:
   generate: true
   assets:
     - assets/config/
-    - assets/images/
+    - assets/animations/
