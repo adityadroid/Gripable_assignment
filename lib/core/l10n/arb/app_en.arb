@@ -1,3 +1,9 @@
 {
-    "@@locale": "en"
+    "@@locale": "en",
+    "feedHomeHot": "Hot",
+    "feedHomeNew": "New",
+    "feedHomeRising": "Rising",
+    "feedHomeTitle": "/r/{subRedditName}",
+    "globalErrorMessage": "Something went wrong!",
+    "noDataMessage": "'Nothing to see here!'"
 }

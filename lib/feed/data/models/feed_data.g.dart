@@ -11,7 +11,7 @@ _$FeedDataImpl _$$FeedDataImplFromJson(Map<String, dynamic> json) =>
       children: (json['children'] as List<dynamic>)
           .map((e) => Post.fromJson(e as Map<String, dynamic>))
           .toList(),
-      after: json['after'] as String,
+      after: json['after'] as String?,
     );
 
 Map<String, dynamic> _$$FeedDataImplToJson(_$FeedDataImpl instance) =>

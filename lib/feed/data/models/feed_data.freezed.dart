@@ -21,7 +21,7 @@ FeedData _$FeedDataFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FeedData {
   List<Post> get children => throw _privateConstructorUsedError;
-  String get after => throw _privateConstructorUsedError;
+  String? get after => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,7 @@ abstract class $FeedDataCopyWith<$Res> {
   factory $FeedDataCopyWith(FeedData value, $Res Function(FeedData) then) =
       _$FeedDataCopyWithImpl<$Res, FeedData>;
   @useResult
-  $Res call({List<Post> children, String after});
+  $Res call({List<Post> children, String? after});
 }
 
 /// @nodoc
@@ -51,17 +51,17 @@ class _$FeedDataCopyWithImpl<$Res, $Val extends FeedData>
   @override
   $Res call({
     Object? children = null,
-    Object? after = null,
+    Object? after = freezed,
   }) {
     return _then(_value.copyWith(
       children: null == children
           ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
               as List<Post>,
-      after: null == after
+      after: freezed == after
           ? _value.after
           : after // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -74,7 +74,7 @@ abstract class _$$FeedDataImplCopyWith<$Res>
       __$$FeedDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Post> children, String after});
+  $Res call({List<Post> children, String? after});
 }
 
 /// @nodoc
@@ -89,17 +89,17 @@ class __$$FeedDataImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? children = null,
-    Object? after = null,
+    Object? after = freezed,
   }) {
     return _then(_$FeedDataImpl(
       children: null == children
           ? _value._children
           : children // ignore: cast_nullable_to_non_nullable
               as List<Post>,
-      after: null == after
+      after: freezed == after
           ? _value.after
           : after // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -107,8 +107,7 @@ class __$$FeedDataImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$FeedDataImpl implements _FeedData {
-  const _$FeedDataImpl(
-      {required final List<Post> children, required this.after})
+  const _$FeedDataImpl({required final List<Post> children, this.after})
       : _children = children;
 
   factory _$FeedDataImpl.fromJson(Map<String, dynamic> json) =>
@@ -123,7 +122,7 @@ class _$FeedDataImpl implements _FeedData {
   }
 
   @override
-  final String after;
+  final String? after;
 
   @override
   String toString() {
@@ -161,7 +160,7 @@ class _$FeedDataImpl implements _FeedData {
 abstract class _FeedData implements FeedData {
   const factory _FeedData(
       {required final List<Post> children,
-      required final String after}) = _$FeedDataImpl;
+      final String? after}) = _$FeedDataImpl;
 
   factory _FeedData.fromJson(Map<String, dynamic> json) =
       _$FeedDataImpl.fromJson;
@@ -169,7 +168,7 @@ abstract class _FeedData implements FeedData {
   @override
   List<Post> get children;
   @override
-  String get after;
+  String? get after;
   @override
   @JsonKey(ignore: true)
   _$$FeedDataImplCopyWith<_$FeedDataImpl> get copyWith =>

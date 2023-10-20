@@ -8,7 +8,7 @@ part 'feed_data.g.dart';
 class FeedData with _$FeedData {
   const factory FeedData({
     required List<Post> children,
-    required String after,
+    String? after,
   }) = _FeedData;
 
   factory FeedData.fromJson(Map<String, dynamic> json) =>
