@@ -21,7 +21,7 @@ class FeedHomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => DefaultTabController(
-        length: 3,
+        length: SortType.values.length,
         child: Scaffold(
           appBar: AppBar(
             title: Text(
@@ -30,11 +30,9 @@ class FeedHomeView extends StatelessWidget {
               ),
             ),
             bottom: TabBar(
-              tabs: <Widget>[
-                Tab(text: context.l10n.feedHomeHot),
-                Tab(text: context.l10n.feedHomeNew),
-                Tab(text: context.l10n.feedHomeRising),
-              ],
+              tabs: SortType.values
+                  .map((sortType) => Tab(text: sortType.label(context)))
+                  .toList(),
             ),
           ),
           body: TabBarView(
