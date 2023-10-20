@@ -76,7 +76,7 @@ class _FeedListViewState extends State<FeedListView>
               return position >= feedData.children.length
                   ? const AppBottomLoader()
                   : PostCard(
-                      key: ObjectKey(feedData),
+                      key: ValueKey(feedData),
                       postData: feedData.children[position].data,
                     );
             },
